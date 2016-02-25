@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('team535', ['ui.router', 'team535.controllers'])
+angular.module('team535', [
+  'ui.router', 
+  'team535.controllers', 
+  'ngMaterial'
+  ])
+
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       // abstract state
