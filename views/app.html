@@ -20,9 +20,10 @@
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
         </md-button>
         
-        <div ui-view>
-          <div>app.html with controller {{ controllerName }}</div>
+        <!-- THIS IS THE mainContent view - it is filled with whatever template we wanna put in it -->
+        <div ui-view name="mainContent">
         </div>
+
       </div>
       <div flex>
       </div>

@@ -10,22 +10,43 @@ angular.module('team535', [
     $stateProvider
       // abstract state
       .state('app', {
-        url: '/',
+        url: '/app',
+        abstract: true,
         templateUrl: 'views/app.html',
         controller: 'AppCtrl'
       })
-/*
+
       .state('app.home', {
-        url: '/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        url: '/home',
+        views: {
+          'mainContent': {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+          }
+        }
       })
+
+      .state('app.district', {
+        url: '/district/{districtName}',
+        views: {
+          'mainContent': {
+            templateUrl: 'views/district.html',
+            controller: 'DistrictCtrl',
+            params: ['districtName']
+          }
+        }
+      })
+
       .state('app.member', {
         url: '/member/{id}',
-        templateUrl: 'views/member.html',
-        controller: 'MemberCtrl',
-        params: ['id']
+        views: {
+          'mainContent': {
+            templateUrl: 'views/member.html',
+            controller: 'MemberCtrl',
+            params: ['id']
+          }
+        }
       })
-*/
-    $urlRouterProvider.otherwise('/');
+
+    $urlRouterProvider.otherwise('/app/home');
   });
