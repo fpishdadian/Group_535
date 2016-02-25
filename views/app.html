@@ -16,19 +16,16 @@
     </md-sidenav>
     <md-content flex layout-padding>
       <div layout="vertical" layout-fill layout-align="top center">
+        <md-button class="md-fab md-fab-top-left md-primary" aria-label="Toggle sidenav" ng-click="toggleSideNav()" hide-gt-md>
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        
         <div ui-view>
           <div>app.html with controller {{ controllerName }}</div>
         </div>
-
-        <div>
-          <md-button ng-click="toggleLeft()"
-            class="md-primary" hide-gt-md>
-            Toggle left
-          </md-button>
-        </div>
-        
       </div>
-      <div flex></div>
+      <div flex>
+      </div>
     </md-content>
   </section>
 </div>

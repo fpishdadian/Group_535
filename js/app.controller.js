@@ -3,7 +3,7 @@
 angular.module('team535.controllers', [])
   .controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log) {
     $scope.controllerName = 'AppCtrl';
-    $scope.toggleLeft = buildDelayedToggler('left');
+    $scope.toggleSideNav = buildDelayedToggler('left');
 
     /**
      * Supplies a function that will continue to operate until the
