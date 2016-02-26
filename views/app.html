@@ -27,14 +27,14 @@
         </p>
       </md-content>
     </md-sidenav>
-    <md-content flex layout-padding>
+    <md-content flex>
       <div layout="vertical" layout-fill layout-align="top center">
         <md-button class="md-fab md-fab-top-left md-primary" aria-label="Toggle sidenav" ng-click="toggleSideNav()" hide-gt-md>
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
         </md-button>
         
         <!-- THIS IS THE mainContent view - it is filled with whatever template we wanna put in it -->
-        <div ui-view name="mainContent">
+        <div ui-view name="mainContent" layout-fill>
         </div>
 
       </div>
