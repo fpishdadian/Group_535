@@ -45,6 +45,7 @@ angular.module('team535.controllers', [])
     }
   })
 
+  // controller for the sidenav
   .controller('SideNavCtrl', function($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       $mdSidenav('left').close()
@@ -52,4 +53,8 @@ angular.module('team535.controllers', [])
           $log.debug("close LEFT is done");
         });
     };
-  });
+
+    $scope.openMenu = function ($mdOpenMenu, ev) {
+      $mdOpenMenu(ev);
+    };
+  })
