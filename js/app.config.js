@@ -27,12 +27,11 @@ angular.module('team535', [
       })
 
       .state('app.district', {
-        url: '/district/{districtName}',
+        url: '/district',
         views: {
           'mainContent': {
             templateUrl: 'views/district.html',
-            controller: 'DistrictCtrl',
-            params: ['districtName']
+            controller: 'DistrictCtrl'
           }
         }
       })
