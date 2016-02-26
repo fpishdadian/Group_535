@@ -44,11 +44,12 @@ angular.module('team535', [
       })
 
       .state('app.district', {
-        url: '/district',
+        url: '/district/{id}',
         views: {
           'mainContent': {
             templateUrl: 'views/district.html',
-            controller: 'DistrictCtrl'
+            controller: 'DistrictCtrl',
+            params: ['id']
           }
         }
       })

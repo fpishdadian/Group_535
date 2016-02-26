@@ -62,8 +62,9 @@ angular.module('team535.controllers', [])
 
     $scope.district = $scope.savedDistricts[0];
 
-    $scope.selectDistrict = function(index) {
-      $scope.district = $scope.savedDistricts[index];
+    $scope.selectDistrict = function(id) {
+      $scope.district = DistrictService.get({id: id});
+      $state.go('app.district', {id: id});
     };
 
     $scope.selectMember = function(id) {

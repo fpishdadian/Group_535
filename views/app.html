@@ -21,7 +21,7 @@
           </md-button>
           <md-menu-content width="4" class="md-default-theme" id="district-select-content">
             <md-menu-item ng-repeat="district in savedDistricts">
-              <md-button ng-click="selectDistrict($index)">
+              <md-button ng-click="selectDistrict(district.id)">
                 {{district.name}}
               </md-button>
             </md-menu-item>
