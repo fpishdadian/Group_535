@@ -3,8 +3,25 @@
 angular.module('team535', [
   'ui.router', 
   'team535.controllers', 
+  'team535.services', 
   'ngMaterial'
   ])
+
+  .config(function ($mdThemingProvider) {
+    $mdThemingProvider
+      .theme('default')
+      .primaryPalette('blue')
+      .accentPalette('pink')
+      .warnPalette('red')
+      .backgroundPalette('grey');
+
+    $mdThemingProvider
+      .theme('sidenav')
+      .primaryPalette('blue-grey')
+      .accentPalette('pink')
+      .warnPalette('red')
+      .backgroundPalette('blue-grey').dark();
+  })
 
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

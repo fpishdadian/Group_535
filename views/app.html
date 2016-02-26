@@ -1,12 +1,12 @@
 <div layout="column" style="height:100%" ng-cloak>
   <section layout="row" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-theme="sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <!--<md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
       </md-toolbar>-->
-      <md-content layout-padding ng-controller="SideNavCtrl">
+      <md-content layout-padding ng-controller="SideNavCtrl" style="height:1000px">
 
-        <md-menu md-offset="0 55" layout="column" id="district-select">
+        <md-menu md-offset="0 56" layout="column" id="district-select">
           <md-button class="md-primary md-raised" ng-click="openMenu($mdOpenMenu, $event)" flex>
             <div layout="row">
               <div layout="column" layout-align="center start" flex>
@@ -19,7 +19,7 @@
               </div>
             </div>
           </md-button>
-          <md-menu-content width="4">
+          <md-menu-content width="4" class="md-default-theme" id="district-select-content">
             <md-menu-item ng-repeat="district in savedDistricts">
               <md-button ng-click="selectDistrict($index)">
                 {{district.name}}
