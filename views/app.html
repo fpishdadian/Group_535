@@ -1,34 +1,74 @@
-<div layout="vertical" ng-cloak>
+<div layout="column" style="height:100%" ng-cloak>
   <section layout="row" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-      <md-toolbar class="md-theme-indigo">
+      <!--<md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
+      </md-toolbar>-->
       <md-content layout-padding ng-controller="SideNavCtrl">
 
-        <md-menu md-offset="0 0">
-          <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        <md-menu md-offset="0 55" layout="column" id="district-select">
+          <md-button class="md-primary md-raised" ng-click="openMenu($mdOpenMenu, $event)" flex>
+            <div layout="row">
+              <div layout="column" layout-align="center start" flex>
+                {{ district.name }}
+              </div>
+              <div layout="column" layout-align="center end" flex>
+                <div>
+                  <md-icon md-svg-icon="img/icons/expand_more.svg">Other Districts</md-icon>
+                </div>
+              </div>
+            </div>
           </md-button>
           <md-menu-content width="4">
-            <md-menu-item ng-repeat="district in [1,2,3]">
-              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{district}} </md-button>
+            <md-menu-item ng-repeat="district in savedDistricts">
+              <md-button ng-click="selectDistrict($index)">
+                {{district.name}}
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="searchDistrict()">
+                Search districts
+              </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
 
-        <!--<md-button ng-click="close()" class="md-primary" hide-gt-md>
+        <!--
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
           Close Sidenav Left
-        </md-button>-->
-
+        </md-button>
+        
         <p hide-md show-gt-md>
           This sidenav is locked open on your device. To go back to the default behavior,
           narrow your display.
         </p>
+        -->
+        <md-list>
+          <md-subheader class="md-no-sticky">Representative</md-subheader>
+          <md-list-item class="md-2-line" ng-init="rep = district.representative" ng-click="selectMember(rep.id)">
+            <img ng-src="" class="md-avatar" alt="{{rep.first_name}} {{rep.last_name}}" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{ rep.first_name }} {{ rep.last_name }}</h3>
+              <p>{{ rep.party }}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+
+        <md-list>
+          <md-subheader class="md-no-sticky">Senators</md-subheader>
+          <md-list-item class="md-2-line" ng-repeat="senator in district.senators" ng-click="selectMember(senator.id)">
+            <img ng-src="" class="md-avatar" alt="{{senator.first_name}} {{senator.last_name}}" />
+            <div class="md-list-item-text" layout="column">
+              <h3>{{ senator.first_name }} {{ senator.last_name }}</h3>
+              <p>{{ senator.party }}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+        
       </md-content>
     </md-sidenav>
     <md-content flex>
-      <div layout="vertical" layout-fill layout-align="top center">
+      <div layout="column" layout-fill layout-align="top center">
         <md-button class="md-fab md-fab-top-left md-primary" aria-label="Toggle sidenav" ng-click="toggleSideNav()" hide-gt-md>
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
         </md-button>
