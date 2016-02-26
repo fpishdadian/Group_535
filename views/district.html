@@ -7,7 +7,7 @@
 
 	<div ng-init="rep = district.representative">
 		<h2 class="md-display-1 district-subheading">Representative</h2>
-	  <md-card class="md-button card-button">
+	  <md-card class="md-button card-button" ng-click="selectMember(rep.id)">
 	    <md-card-title>
 	      <md-card-title-media>
 	        <div class="md-media-sm card-media">
@@ -26,7 +26,7 @@
   <div>
 		<h2 class="md-display-1 district-subheading">Senators</h2>
 	  <span ng-repeat="senator in district.senators">
-	  <md-card class="md-button card-button">
+	  <md-card class="md-button card-button" ng-click="selectMember(senator.id)">
 	    <md-card-title>
 	      <md-card-title-media>
 	        <div class="md-media-sm card-media">
