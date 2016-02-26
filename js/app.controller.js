@@ -60,7 +60,11 @@ angular.module('team535.controllers', [])
 
     $scope.savedDistricts = DistrictService.query();
 
-    $scope.district = $scope.savedDistricts[0];
+    $scope.$watch(
+      function () { return DistrictService.currentDistrict; },
+      function (data) {$scope.district = data;},
+      true
+    );
 
     $scope.selectDistrict = function(id) {
       $scope.district = DistrictService.get({id: id});

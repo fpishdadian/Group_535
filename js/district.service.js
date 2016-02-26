@@ -72,9 +72,12 @@ angular.module('team535.services')
         return districts;
       },
       get: function(req) {
-        return districts.find(function(district) {
+        var currentDistrict = districts.find(function(district) {
           return district.id == req.id;
         });
-      }
+        this.currentDistrict = currentDistrict;
+        return currentDistrict;
+      },
+      currentDistrict: districts[0]
     };
   });
