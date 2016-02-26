@@ -76,5 +76,5 @@ angular.module('team535.services')
           return district.id == req.id;
         });
       }
-    }
+    };
   });
