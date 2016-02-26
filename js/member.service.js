@@ -12,7 +12,7 @@ angular.module('team535.services')
         'party': 'Democrat',
         'state': 'Illinois',
         'office_start': 1997,
-        'img_url': 'img/members/dick_durbin_lg.jpg'
+        'img_url': 'img/members/dick_durbin_lg.png'
       },
       {
         'id': 4976,
@@ -23,7 +23,7 @@ angular.module('team535.services')
         'party': 'Republican',
         'state': 'Illinois',
         'office_start': 2010,
-        'img_url': 'img/members/mark_kirk_lg.jpg'
+        'img_url': 'img/members/mark_kirk_lg.png'
       },
       {
         'id': 2231,
@@ -32,9 +32,9 @@ angular.module('team535.services')
         'last_name': 'Schakowsky',
         'party': 'Democrat',
         'state': 'Illinois',
-        'district_id': 19,
+        'district_name': 'Illinois\'s 9th',
         'office_start': 1999,
-        'img_url': 'img/members/jan_schakowsky_lg.jpg'
+        'img_url': 'img/members/jan_schakowsky_lg.png'
       },
       {
         'id': 2993,
@@ -45,7 +45,7 @@ angular.module('team535.services')
         'party': 'Democrat',
         'state': 'Ohio',
         'office_start': 2007,
-        'img_url': 'img/members/sherrod_brown_lg.jpg'
+        'img_url': 'img/members/sherrod_brown_lg.png'
       },
       {
         'id': 5302,
@@ -56,7 +56,7 @@ angular.module('team535.services')
         'party': 'Republican',
         'state': 'Ohio',
         'office_start': 2011,
-        'img_url': 'img/members/rob_portman_lg.jpg'
+        'img_url': 'img/members/rob_portman_lg.png'
       },
       {
         'id': 3054,
@@ -65,9 +65,9 @@ angular.module('team535.services')
         'last_name': 'Wenstrup',
         'party': 'Republican',
         'state': 'Ohio',
-        'district_id': 22,
+        'district_name': 'Ohio\'s 2nd',
         'office_start': 2013,
-        'img_url': 'img/members/brad_wenstrup_lg.jpg'
+        'img_url': 'img/members/brad_wenstrup_lg.png'
       }
     ];
 

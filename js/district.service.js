@@ -14,7 +14,7 @@ angular.module('team535.services')
           'last_name': 'Durbin',
           'party': 'Democrat',
           'office_start': 1997,
-          'img_url': 'img/members/dick_durbin.jpg'
+          'img_url': 'img/members/dick_durbin.png'
         },
         {
           'id': 4976,
@@ -23,7 +23,7 @@ angular.module('team535.services')
           'last_name': 'Kirk',
           'party': 'Republican',
           'office_start': 2010,
-          'img_url': 'img/members/mark_kirk.jpg'
+          'img_url': 'img/members/mark_kirk.png'
         }],
         'representative': {
           'id': 2231,
@@ -31,7 +31,7 @@ angular.module('team535.services')
           'last_name': 'Schakowsky',
           'party': 'Democrat',
           'office_start': 1999,
-          'img_url': 'img/members/jan_schakowsky.jpg'
+          'img_url': 'img/members/jan_schakowsky.png'
         }
       },
       { 
@@ -45,7 +45,7 @@ angular.module('team535.services')
           'last_name': 'Brown',
           'party': 'Democrat',
           'office_start': 2007,
-          'img_url': 'img/members/sherrod_brown.jpg'
+          'img_url': 'img/members/sherrod_brown.png'
         },
         {
           'id': 5302,
@@ -54,7 +54,7 @@ angular.module('team535.services')
           'last_name': 'Portman',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/rob_portman.jpg'
+          'img_url': 'img/members/rob_portman.png'
         }],
         'representative': {
           'id': 3054,
@@ -62,7 +62,7 @@ angular.module('team535.services')
           'last_name': 'Wenstrup',
           'party': 'Republican',
           'office_start': 2013,
-          'img_url': 'img/members/brad_wenstrup.jpg'
+          'img_url': 'img/members/brad_wenstrup.png'
         }
       },
     ];

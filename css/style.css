@@ -5,6 +5,10 @@ html, body {
   height: 100%;
 }
 
+img {
+  display: block;
+}
+
 #app {
   position: absolute;
   width: 100%;
@@ -57,4 +61,13 @@ html, body {
   border-radius: 0px;
   text-align: left;
   text-transform: none;
+}
+
+
+
+
+/* CONGRESS MEMBER PAGE */
+.member-img-lg {
+  border-radius: 50%;
+  overflow: hidden;
 }
