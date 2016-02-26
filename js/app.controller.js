@@ -46,7 +46,7 @@ angular.module('team535.controllers', [])
   })
 
   // controller for the sidenav
-  .controller('SideNavCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  .controller('SideNavCtrl', function($scope, $state, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       $mdSidenav('left').close()
         .then(function () {
@@ -112,4 +112,12 @@ angular.module('team535.controllers', [])
     ];
 
     $scope.district = $scope.savedDistricts[0];
+
+    $scope.selectDistrict = function(index) {
+      $scope.district = $scope.savedDistricts[index];
+    };
+
+    $scope.selectMember = function(id) {
+      $state.go('app.member', {id: id});
+    }
   })
