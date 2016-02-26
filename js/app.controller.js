@@ -57,4 +57,11 @@ angular.module('team535.controllers', [])
     $scope.openMenu = function ($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
     };
+
+    $scope.savedDistricts = [
+      { 'id': 1, 'name': 'Illinois\' 9th' },
+      { 'id': 2, 'name': 'Illinois\' 10th' }
+    ];
+
+    $scope.district = $scope.savedDistricts[0];
   })

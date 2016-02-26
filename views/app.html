@@ -1,18 +1,29 @@
-<div layout="vertical" ng-cloak>
+<div layout="column" style="height:100%" ng-cloak>
   <section layout="row" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-      <md-toolbar class="md-theme-indigo">
+      <!--<md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
+      </md-toolbar>-->
       <md-content layout-padding ng-controller="SideNavCtrl">
 
-        <md-menu md-offset="0 0">
-          <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        <md-menu md-offset="0 45" layout="column" id="district-select">
+          <md-button class="md-primary md-raised" ng-click="openMenu($mdOpenMenu, $event)" flex>
+            <div layout="row">
+              <div layout="column" layout-align="center start" flex>
+                {{ district.name }}
+              </div>
+              <div layout="column" layout-align="center end" flex>
+                <div>
+                  <md-icon md-svg-icon="img/icons/expand_more.svg">Other Districts</md-icon>
+                </div>
+              </div>
+            </div>
           </md-button>
           <md-menu-content width="4">
-            <md-menu-item ng-repeat="district in [1,2,3]">
-              <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{district}} </md-button>
+            <md-menu-item ng-repeat="district in savedDistricts">
+              <md-button ng-click="selectDistrict($index)">
+                {{district.name}}
+              </md-button>
             </md-menu-item>
           </md-menu-content>
         </md-menu>
@@ -28,7 +39,7 @@
       </md-content>
     </md-sidenav>
     <md-content flex layout-padding>
-      <div layout="vertical" layout-fill layout-align="top center">
+      <div layout="column" layout-fill layout-align="top center">
         <md-button class="md-fab md-fab-top-left md-primary" aria-label="Toggle sidenav" ng-click="toggleSideNav()" hide-gt-md>
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
         </md-button>
