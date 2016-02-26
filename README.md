@@ -13,3 +13,5 @@ $ python -m SimpleHTTPServer
 ```
 
 Then point the browser to http://localhost:8000/index.html
+
+WW: I am testing my git pull/push, I opened the browser, that looks pretty cool. Then we can fill in the information for the members. 
