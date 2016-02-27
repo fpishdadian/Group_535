@@ -1,58 +1,26 @@
 <div layout-fill layout-wrap layout="column" layout-align="start">
   <md-content class="md-padding">
-    <div layout="row">
-      <div layout="column" layout-margin>
-        <div class="member-img-lg">
-          <img ng-src="{{member.img_url}}" alt="{{member.first_name}} {{member.last_name}}">
-        </div>
-      </div>
-      <div layout="column" layout-align="end" layout-margin flex>
-        <div>
-          <div layout="row" class="md-headline">
-              {{ member.position }}
-          </div>
-          <div layout="row" class="md-display-2">
-            {{ member.first_name }} {{ member.last_name }}
-          </div>
-          <div layout="row" class="md-headline">
-              <span ng-switch on="member.position">
-                <span ng-switch-when="Representative">
-                  {{ member.district_name }}
-                </span>
-                <span ng-switch-when="Senator">
-                  {{ member.state }}
-                </span>
-              </span>
-              &nbsp; (since {{ member.office_start }})
-          </div>
-          <div layout="row" class="md-subhead">
-              {{ member.party }}
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <div ui-view name="infoContent"></div>
 
     <div layout="column" layout-margin>
     <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-stretch-tabs="always">
       <md-tab id="overview-tab">
         <md-tab-label>Overview</md-tab-label>
         <md-tab-body>
-          View for Item #1 <br/>
-          data.selectedIndex = 0;
+          <div ui-view name="overviewContent"></div>
         </md-tab-body>
       </md-tab>
       <md-tab id="search-tab">
         <md-tab-label>Search</md-tab-label>
         <md-tab-body>
-          View for Item #1 <br/>
-          data.selectedIndex = 0;
+          <div ui-view name="searchContent"></div>
         </md-tab-body>
       </md-tab>
       <md-tab id="timeline-tab">
         <md-tab-label>Timeline</md-tab-label>
         <md-tab-body>
-          View for Item #1 <br/>
-          data.selectedIndex = 0;
+          <div ui-view name="timelineContent"></div>
         </md-tab-body>
       </md-tab>
     </md-tabs>

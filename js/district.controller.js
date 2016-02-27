@@ -8,6 +8,6 @@ angular.module('team535.controllers')
     $scope.district = DistrictService.get({id: $stateParams.id});
 
     $scope.selectMember = function(id) {
-    	$state.go('app.member', {id: id});
+    	$state.go('app.member.detail', {id: id});
     };
   });

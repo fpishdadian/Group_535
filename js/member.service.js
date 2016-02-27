@@ -12,7 +12,7 @@ angular.module('team535.services')
         'party': 'Democrat',
         'state': 'Illinois',
         'office_start': 1997,
-        'img_url': 'img/members/dick_durbin_lg.png'
+        'img_url': 'img/members/dick_durbin.png'
       },
       {
         'id': 4976,
@@ -23,7 +23,7 @@ angular.module('team535.services')
         'party': 'Republican',
         'state': 'Illinois',
         'office_start': 2010,
-        'img_url': 'img/members/mark_kirk_lg.png'
+        'img_url': 'img/members/mark_kirk.png'
       },
       {
         'id': 2231,
@@ -34,7 +34,7 @@ angular.module('team535.services')
         'state': 'Illinois',
         'district_name': 'Illinois\'s 9th',
         'office_start': 1999,
-        'img_url': 'img/members/jan_schakowsky_lg.png'
+        'img_url': 'img/members/jan_schakowsky.png'
       },
       {
         'id': 2993,
@@ -45,7 +45,7 @@ angular.module('team535.services')
         'party': 'Democrat',
         'state': 'Ohio',
         'office_start': 2007,
-        'img_url': 'img/members/sherrod_brown_lg.png'
+        'img_url': 'img/members/sherrod_brown.png'
       },
       {
         'id': 5302,
@@ -56,7 +56,7 @@ angular.module('team535.services')
         'party': 'Republican',
         'state': 'Ohio',
         'office_start': 2011,
-        'img_url': 'img/members/rob_portman_lg.png'
+        'img_url': 'img/members/rob_portman.png'
       },
       {
         'id': 3054,
@@ -67,7 +67,7 @@ angular.module('team535.services')
         'state': 'Ohio',
         'district_name': 'Ohio\'s 2nd',
         'office_start': 2013,
-        'img_url': 'img/members/brad_wenstrup_lg.png'
+        'img_url': 'img/members/brad_wenstrup.png'
       }
     ];
 
@@ -76,9 +76,12 @@ angular.module('team535.services')
         return members;
       },
       get: function(req) {
-        return members.find(function(member) {
+        var currentMember = members.find(function(member) {
           return member.id == req.id;
         });
-      }
+        this.currentMember = currentMember;
+        return currentMember;
+      },
+      currentMember: members[0]
     };
   });

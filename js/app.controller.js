@@ -72,6 +72,6 @@ angular.module('team535.controllers', [])
     };
 
     $scope.selectMember = function(id) {
-      $state.go('app.member', {id: id});
+      $state.go('app.member.detail', {id: id});
     }
   })
