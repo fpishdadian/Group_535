@@ -15,16 +15,16 @@ img {
   height: 100%;
 }
 
-.md-button.md-fab.md-fab-top-left {
-  top: 20px;
-  left: 20px;
+.md-button.md-fab.md-fab-menu {
+  top: auto;
+  left: auto;
   bottom: auto;
   right: auto;
   position: fixed;
   opacity: 0.3;
 }
 
-.md-button.md-fab.md-fab-top-left:hover {
+.md-button.md-fab.md-fab-menu:hover {
   opacity: 1;
 }
 
