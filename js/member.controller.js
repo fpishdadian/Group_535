@@ -1,21 +1,27 @@
 'use strict';
 
 angular.module('team535.controllers')
-  .controller('MemberCtrl', function($scope, $state, $stateParams, MemberService) {
+  .controller('MemberCtrl', function($scope, $stateParams, MemberService) {
     $scope.controllerName = 'MemberCtrl';
     $scope.id = $stateParams.id;
 
     $scope.member = MemberService.get({id: $stateParams.id});
-
-    $scope.go = function() {
-    	$state.go('app.member.search');
-    };
   })
 
-  .controller('MemberSearchCtrl', function($scope, $stateParams) {
-  	$scope.test = 'Member search tab controller';
+  .controller('MemberOverviewCtrl', function($scope, MemberService) {
+  	$scope.controllerName = 'MemberOverviewCtrl';
+
+  	$scope.member = MemberService.currentMember;
   })
 
-  .controller('MemberTimelineCtrl', function($scope, $stateParams) {
-  	$scope.test = 'Member timeline tab controller';
+  .controller('MemberSearchCtrl', function($scope, MemberService) {
+  	$scope.controllerName = 'MemberSearchCtrl';
+
+  	$scope.member = MemberService.currentMember;
+  })
+
+  .controller('MemberTimelineCtrl', function($scope, MemberService) {
+  	$scope.controllerName = 'MemberTimelineCtrl';
+
+  	$scope.member = MemberService.currentMember;
   });

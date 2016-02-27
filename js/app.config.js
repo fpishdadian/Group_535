@@ -78,16 +78,18 @@ angular.module('team535', [
             controller: 'MemberCtrl',
             params: ['id']
           },
+          'overviewContent': {
+            templateUrl: 'views/member.overview.html',
+            controller: 'MemberOverviewCtrl'
+          },
           'searchContent': {
             templateUrl: 'views/member.search.html',
-            controller: 'MemberSearchCtrl',
-            params: ['id']
+            controller: 'MemberSearchCtrl'
           },
           'timelineContent': {
             templateUrl: 'views/member.timeline.html',
-            controller: 'MemberTimelineCtrl',
-            params: ['id']
-          },
+            controller: 'MemberTimelineCtrl'
+          }
         }
       });
 

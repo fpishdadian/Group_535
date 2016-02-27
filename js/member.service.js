@@ -76,9 +76,12 @@ angular.module('team535.services')
         return members;
       },
       get: function(req) {
-        return members.find(function(member) {
+        var currentMember = members.find(function(member) {
           return member.id == req.id;
         });
-      }
+        this.currentMember = currentMember;
+        return currentMember;
+      },
+      currentMember: members[0]
     };
   });
