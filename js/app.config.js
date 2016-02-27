@@ -24,6 +24,10 @@ angular.module('team535', [
   })
 
   .config(function($stateProvider, $urlRouterProvider) {
+    // redirect to home from abstract member state
+    $urlRouterProvider
+      .when('/app/member', '/app/home')
+
     $stateProvider
       // abstract state
       .state('app', {
@@ -55,15 +59,37 @@ angular.module('team535', [
       })
 
       .state('app.member', {
-        url: '/member/{id}',
+        url: '/member',
+        controller: 'MemberCtrl',
         views: {
           'mainContent': {
+            abstract: true,
             templateUrl: 'views/member.html',
-            controller: 'MemberCtrl',
-            params: ['id']
+            //controller: 'MemberCtrl'
           }
         }
       })
+
+      .state('app.member.detail', {
+        url: '/{id}',
+        views: {
+          'infoContent': {
+            templateUrl: 'views/member.info.html',
+            controller: 'MemberCtrl',
+            params: ['id']
+          },
+          'searchContent': {
+            templateUrl: 'views/member.search.html',
+            controller: 'MemberSearchCtrl',
+            params: ['id']
+          },
+          'timelineContent': {
+            templateUrl: 'views/member.timeline.html',
+            controller: 'MemberTimelineCtrl',
+            params: ['id']
+          },
+        }
+      });
 
     $urlRouterProvider.otherwise('/app/home');
   });
