@@ -1,29 +1,33 @@
-<div layout-fill layout-wrap layout="column" layout-align="start">
-  <md-content class="md-padding">
+<div layout-fill layout-wrap layout="row" layout-align="start">
+  <md-content class="md-padding" layout="column" layout-fill flex>
+    
+    <div layout="row">
+      <div ui-view name="infoContent"></div>
+    </div>
 
-    <div ui-view name="infoContent"></div>
-
-    <div layout="column" layout-margin>
-    <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-stretch-tabs="always">
-      <md-tab id="overview-tab">
-        <md-tab-label>Overview</md-tab-label>
-        <md-tab-body>
-          <div ui-view name="overviewContent"></div>
-        </md-tab-body>
-      </md-tab>
-      <md-tab id="search-tab">
-        <md-tab-label>Search</md-tab-label>
-        <md-tab-body>
-          <div ui-view name="searchContent"></div>
-        </md-tab-body>
-      </md-tab>
-      <md-tab id="timeline-tab">
-        <md-tab-label>Timeline</md-tab-label>
-        <md-tab-body>
-          <div ui-view name="timelineContent"></div>
-        </md-tab-body>
-      </md-tab>
-    </md-tabs>
+    <div layout="row" flex>
+      <div layout="column" layout-margin flex>
+        <md-tabs md-border-bottom md-autoselect md-stretch-tabs="always" layout="column" flex>
+          <md-tab id="overview-tab">
+            <md-tab-label>Overview</md-tab-label>
+            <md-tab-body>
+              <div ui-view name="overviewContent"></div>
+            </md-tab-body>
+          </md-tab>
+          <md-tab id="search-tab">
+            <md-tab-label>Search</md-tab-label>
+            <md-tab-body>
+              <div ui-view name="searchContent"></div>
+            </md-tab-body>
+          </md-tab>
+          <md-tab id="timeline-tab">
+            <md-tab-label>Timeline</md-tab-label>
+            <md-tab-body>
+              <div ui-view name="timelineContent"></div>
+            </md-tab-body>
+          </md-tab>
+        </md-tabs>
+      </div>
     </div>
 
   </md-content>

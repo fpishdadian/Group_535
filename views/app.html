@@ -1,5 +1,5 @@
 <div layout="column" style="height:100%" ng-cloak>
-  <section layout="row" flex>
+  <section layout="row" layout-fill>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-theme="sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <!--<md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
@@ -68,7 +68,7 @@
         
       </md-content>
     </md-sidenav>
-    <md-content flex>
+    <md-content layout-fill flex>
       <div layout="column" layout-fill layout-align="start">
         <md-button class="md-fab md-fab-menu md-primary" aria-label="Toggle sidenav" ng-click="toggleSideNav()" hide-gt-md>
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
