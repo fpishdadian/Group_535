@@ -1,24 +1,35 @@
 <div layout="column" layout-fill>
   <div layout="row" flex>
-    
-    <div layout="column" id="timeline-filters">
-      <h4 class="md-subhead">Filter:</h4>
-      <md-datepicker ng-model="timelineStart" md-placeholder="From"></md-datepicker>
-      <md-datepicker ng-model="timelineEnd" md-placeholder="To"></md-datepicker>
-      <br>
-      
-      <h4 class="md-subhead">By year:</h4>
-      <div layout="row" layout-wrap ng-repeat="year in years">
-        <md-checkbox ng-checked="active(year, selected)" ng-click="toggle(year, selected)">
-          {{ year }}
-        </md-checkbox>
-      </div>
 
+    <div layout="column" class="timeline-filters">
+      <!-- for smaller screens
+      <div layout="row" hide-gt-xs>
+        <md-datepicker ng-model="timelineStart" md-placeholder="From"></md-datepicker>
+        <md-datepicker ng-model="timelineEnd" md-placeholder="To"></md-datepicker>
+      </div>
+      -->
+
+      <div layout="column" hide-xs>
+        <h4 class="md-subhead">Filter:</h4>
+        <md-datepicker ng-model="timelineStart" md-placeholder="From"></md-datepicker>
+        <md-datepicker ng-model="timelineEnd" md-placeholder="To"></md-datepicker>
+        <br>
+        
+        <h4 class="md-subhead">By year:</h4>
+        <div layout="row" layout-wrap ng-repeat="year in years">
+          <md-checkbox ng-checked="active(year, selected)" ng-click="toggle(year, selected)">
+            {{ year }}
+          </md-checkbox>
+        </div>
+      </div>
     </div>
 
-    <div layout="column" layout-fill id="timeline-results">
+    <div layout="column" id="timeline-results-filler" hide-xs>
+    </div>
+
+    <div layout="column" layout-fill>
       <md-list>
-        <md-list-item class="md-2-line md-long-text member-timeline-result" ng-repeat="event in timelineResults.events">
+        <md-list-item class="md-2-line md-long-text timeline-list-item" ng-repeat="event in timelineResults.events">
           <div>
             <p class="timeline-list-item-date">
               {{ event.date.toLocaleDateString('en-US') }}

@@ -87,14 +87,14 @@ img {
 }
 
 
-#timeline-filters {
+.timeline-filters {
   position: fixed;
 }
-#timeline-results {
-  position: relative;
-  left: 185px;
+#timeline-results-filler {
+  min-width: 180px;
 }
-.member-timeline-result {
+
+.timeline-list-item {
   margin: 0 !important;
   padding: 0 !important;
 }
