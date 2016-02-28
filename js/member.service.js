@@ -130,6 +130,74 @@ angular.module('team535.services')
       }
     ];
 
+    var timelineResults = [
+      {
+        'member_id': 2993,
+        'events': [
+          {
+            'date': new Date(2016, 0, 28),
+            'description': 'Bill to reduce carbon emissions',
+            'vote': 'Aye',
+            'with_party': true
+          },
+          {
+            'date': new Date(2016, 0, 26),
+            'description': 'Bill to build Mexican border fence',
+            'vote': 'Nay',
+            'with_party': true
+          },
+          {
+            'date': new Date(2016, 0, 25),
+            'description': 'Bill to make gun ownership mandatory',
+            'vote': 'Nay',
+            'with_party': false
+          },
+          {
+            'date': new Date(2016, 0, 23),
+            'description': 'Joined committee to investigate Criss Angel',
+            'vote': '',
+            'with_party': null
+          },
+          {
+            'date': new Date(2016, 0, 20),
+            'description': 'Co-sponsored bill to fire all mailmen',
+            'vote': '',
+            'with_party': null
+          },
+          {
+            'date': new Date(2016, 0, 15),
+            'description': 'Bill to banish Michael Bay',
+            'vote': 'Aye',
+            'with_party': true
+          },
+          {
+            'date': new Date(2016, 0, 9),
+            'description': 'Sponsored bill to make Simlish a required course in school',
+            'vote': '',
+            'with_party': null
+          },
+          {
+            'date': new Date(2016, 0, 6),
+            'description': 'Bill to nationalize all pizza production',
+            'vote': 'Nay',
+            'with_party': false
+          },
+          {
+            'date': new Date(2016, 0, 1),
+            'description': 'Sponsored bill to research flux capacitors',
+            'vote': '',
+            'with_party': null
+          },
+          {
+            'date': new Date(2015, 11, 25),
+            'description': 'Bill to find Santa Claus',
+            'vote': 'Aye',
+            'with_party': true
+          },
+        ]
+      }
+    ];
+
     return {
       query: function() {
         return members;
@@ -141,6 +209,7 @@ angular.module('team535.services')
         this.currentMember = currentMember;
         return currentMember;
       },
+
       currentMember: members[0],
 
       search: function(req) {
@@ -154,6 +223,14 @@ angular.module('team535.services')
           result.delete('bills');
         if (!req.search_committees)
           result.delete('committees');
+
+        return result;
+      },
+
+      timeline: function(req) {
+        var result = timelineResults.find(function(result) {
+          return result.member_id == req.member_id;
+        });
 
         return result;
       }
