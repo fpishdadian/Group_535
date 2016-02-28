@@ -71,6 +71,65 @@ angular.module('team535.services')
       }
     ];
 
+    var searchResults = [
+      {
+        'member_id': 2993,
+        'bill_votes': [
+          {
+            'id': 34,
+            'title': 'Bill #34',
+            'description': 'To destroy all libraries or some really long description to test out text wrapping on smaller screens',
+            'vote': 'Nay',
+            'with_party': true,
+            'status': 'Failed'
+          },
+          {
+            'id': 81,
+            'title': 'Bill #81',
+            'description': 'To build more libraries',
+            'vote': 'Aye',
+            'with_party': false,
+            'status': 'Passed'
+          }
+        ],
+        'bills': [
+          {
+            'id': 3,
+            'title': 'Bill #3',
+            'description': 'To get new computers for libraries',
+            'sponsorship': 'co-sponsored',
+            'status': 'Passed'
+          },
+          {
+            'id': 13,
+            'title': 'Bill #13',
+            'description': 'To renovate old libraries',
+            'sponsorship': 'co-sponsored',
+            'status': 'First reading'
+          },
+          {
+            'id': 412,
+            'title': 'Bill #412',
+            'description': 'To find new libraries',
+            'sponsorship': 'sponsored',
+            'status': 'In review'
+          }
+        ],
+        'committees': [
+          {
+            'id': 12,
+            'name': 'Bi-partisan Committee to Defend the Libraries',
+            'description': 'Some description for the committee about defending the libraries. This should be long enough to test out the text wrapping on smaller screens'
+          },
+          {
+            'id': 28,
+            'name': 'Committee to Improve Literacy through Libraries',
+            'description': 'Some description for the committee about improving literacy through libraries. This should be long enough to test out the text wrapping on smaller screens'
+          },
+        ]
+      }
+    ];
+
     return {
       query: function() {
         return members;
@@ -82,6 +141,21 @@ angular.module('team535.services')
         this.currentMember = currentMember;
         return currentMember;
       },
-      currentMember: members[0]
+      currentMember: members[0],
+
+      search: function(req) {
+        var result = searchResults.find(function(result) {
+          return result.member_id == req.member_id;
+        });
+
+        if (!req.search_votes)
+          result.delete('bill_votes');
+        if (!req.search_bills)
+          result.delete('bills');
+        if (!req.search_committees)
+          result.delete('committees');
+
+        return result;
+      }
     };
   });

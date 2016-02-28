@@ -9,19 +9,37 @@ angular.module('team535.controllers')
   })
 
   .controller('MemberOverviewCtrl', function($scope, MemberService) {
-  	$scope.controllerName = 'MemberOverviewCtrl';
+    $scope.controllerName = 'MemberOverviewCtrl';
 
-  	$scope.member = MemberService.currentMember;
+    $scope.member = MemberService.currentMember;
   })
 
   .controller('MemberSearchCtrl', function($scope, MemberService) {
-  	$scope.controllerName = 'MemberSearchCtrl';
+    $scope.controllerName = 'MemberSearchCtrl';
 
-  	$scope.member = MemberService.currentMember;
+    $scope.member = MemberService.currentMember;
+
+    $scope.searchVotes = true;
+    $scope.searchBills = true;
+    $scope.searchCommittees = true;
+    $scope.search = function() {
+      var searchTerms = $scope.searchText.split(' ');
+      
+      if (searchTerms.length == 0) 
+        return;
+      
+      $scope.searchResults = MemberService.search({
+        member_id: $scope.member.id,
+        search_terms: searchTerms,
+        search_votes: $scope.searchVotes,
+        search_bills: $scope.searchBills,
+        search_committees: $scope.searchCommittees
+      });
+    };
   })
 
   .controller('MemberTimelineCtrl', function($scope, MemberService) {
-  	$scope.controllerName = 'MemberTimelineCtrl';
+    $scope.controllerName = 'MemberTimelineCtrl';
 
-  	$scope.member = MemberService.currentMember;
+    $scope.member = MemberService.currentMember;
   });

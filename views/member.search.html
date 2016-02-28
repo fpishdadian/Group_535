@@ -1,2 +1,83 @@
-Content for search tab<br>
-{{ controllerName }} <br>
+<div layout="column" layout-fill>
+  <div layout="row" layout-padding flex>
+    <form ng-submit="search()" flex>
+      <div layout="row" flex>
+        <md-autocomplete
+            md-no-cache="true"
+            md-search-text="searchText"
+            md-selected-item-change=""
+            md-items=""
+            md-item-text=""
+            md-min-length="0"
+            placeholder="Keywords..."
+            layout="column"
+            flex>
+          <md-item-template>
+            <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+          </md-item-template>
+        </md-autocomplete>
+        <div layout="column">
+          <md-button class="md-primary md-raised" id="member-search-button" ng-click="search()" layout-fill>Search</md-button>
+        </div>
+      </div>
+      <br/>
+      <md-checkbox ng-model="searchVotes">Votes</md-checkbox>
+      <md-checkbox ng-model="searchBills">Sponsorships</md-checkbox>
+      <md-checkbox ng-model="searchCommittees">Committees</md-checkbox>
+    </form>
+  </div>
+
+  <div layout="row" flex>
+    <md-content layout="column" ng-if="searchResults">
+      
+      <div ng-if="searchVotes">
+        <md-list>
+          <md-subheader class="md-no-sticky">Votes</md-subheader>
+          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.bill_votes">
+            <img ng-src="img/icons/bill.svg" class="md-avatar" alt="bill icon" />
+            <div class="md-list-item-text">
+              <h3>{{ bill.title }}</h3>
+              <h4>
+                {{ bill.vote }} 
+                (<span ng-if="bill.with_party">with</span><span ng-if="!bill.with_party">against</span>
+                 party) - 
+                {{ bill.status }}
+              </h4>
+              <p>{{ bill.description }}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+        <br>
+      </div>
+
+      <div ng-if="searchBills">
+        <md-list>
+          <md-subheader class="md-no-sticky">Sponsorships</md-subheader>
+          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.bills">
+            <img ng-src="img/icons/bill.svg" class="md-avatar" alt="bill icon" />
+            <div class="md-list-item-text">
+              <h3>{{ bill.title }}</h3>
+              <h4>{{ bill.sponsorship }} - {{ bill.status }}</h4>
+              <p>{{ bill.description }}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+        <br>
+      </div>
+
+      <div ng-if="searchCommittees">
+        <md-list>
+          <md-subheader class="md-no-sticky">Committees</md-subheader>
+          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="committee in searchResults.committees">
+            <img ng-src="img/icons/committee.svg" class="md-avatar" alt="committee icon" />
+            <div class="md-list-item-text">
+              <h3>{{ committee.name }}</h3>
+              <p>{{ committee.description }}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+
+    </md-content>
+  </div>
+</div>
