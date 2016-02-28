@@ -81,3 +81,24 @@ img {
 .member-search-result {
   margin: 10px 5px !important;
 }
+
+
+#timeline-filters {
+  position: fixed;
+}
+#timeline-results {
+  position: relative;
+  left: 185px;
+}
+.member-timeline-result {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.timeline-list-item-date {
+  margin: 16px 20px !important;
+  min-width: 85px;
+  text-align: right;
+}
+.timeline-list-item-text {
+  margin: 5px 0 !important;
+}

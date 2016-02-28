@@ -1,2 +1,46 @@
-Content for timeline tab<br>
-{{ controllerName }}
+<div layout="column" layout-fill>
+  <div layout="row" flex>
+    
+    <div layout="column" id="timeline-filters">
+      <h4 class="md-subhead">Filter:</h4>
+      <md-datepicker ng-model="timelineStart" md-placeholder="From"></md-datepicker>
+      <md-datepicker ng-model="timelineEnd" md-placeholder="To"></md-datepicker>
+      <br>
+      
+      <h4 class="md-subhead">By year:</h4>
+      <div layout="row" layout-wrap ng-repeat="year in years">
+        <md-checkbox ng-checked="active(year, selected)" ng-click="toggle(year, selected)">
+          {{ year }}
+        </md-checkbox>
+      </div>
+
+    </div>
+
+    <div layout="column" layout-fill id="timeline-results">
+      <md-list>
+        <md-list-item class="md-2-line md-long-text member-timeline-result" ng-repeat="event in timelineResults.events">
+          <div>
+            <p class="timeline-list-item-date">
+              {{ event.date.toLocaleDateString('en-US') }}
+            </p>
+          </div>
+          <div class="md-list-item-text timeline-list-item-text">
+            <h3>{{ event.title }}</h3>
+            <p ng-if="event.type == 'bill_vote'">
+              voted {{ event.vote }} 
+              (<span ng-if="event.with_party">with</span><span ng-if="!event.with_party">against</span>
+               party) - {{ event.status }}
+            </p>
+            <p ng-if="event.type == 'bill_sponsor'">
+              {{ event.description }}
+            </p>
+            <p ng-if="event.type == 'committee'">
+              {{ event.description }}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+
+  </div>
+ </div>

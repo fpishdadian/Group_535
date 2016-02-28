@@ -25,7 +25,7 @@ angular.module('team535.controllers')
     $scope.search = function() {
       if ($scope.searchText == '')
         return;
-      
+
       var searchTerms = $scope.searchText.split(' ');
       
       $scope.searchResults = MemberService.search({
@@ -42,4 +42,23 @@ angular.module('team535.controllers')
     $scope.controllerName = 'MemberTimelineCtrl';
 
     $scope.member = MemberService.currentMember;
+
+    $scope.years = [2016, 2015, 2014];
+    $scope.selected = [];
+
+    $scope.toggle = function(year, list) {
+      var index = list.indexOf(year);
+      if (index > -1) 
+        list.splice(index, 1);
+      else 
+        list.push(year);
+    }
+
+    $scope.active = function(year, list) {
+      return list.indexOf(year) > -1;
+    }
+
+    $scope.timelineResults = MemberService.timeline({
+      member_id: $scope.member.id
+    });
   });

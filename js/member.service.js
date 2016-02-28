@@ -136,63 +136,93 @@ angular.module('team535.services')
         'events': [
           {
             'date': new Date(2016, 0, 28),
-            'description': 'Bill to reduce carbon emissions',
+            'type': 'bill_vote',
+            'title': 'Bill to reduce carbon emissions',
+            'description': '',
             'vote': 'Aye',
-            'with_party': true
+            'with_party': true,
+            'status': 'Second reading'
           },
           {
             'date': new Date(2016, 0, 26),
-            'description': 'Bill to build Mexican border fence',
+            'type': 'bill_vote',
+            'title': 'Bill to build Mexican border fence',
+            'description': '',
             'vote': 'Nay',
-            'with_party': true
+            'with_party': true,
+            'status': 'Failed'
           },
           {
             'date': new Date(2016, 0, 25),
-            'description': 'Bill to make gun ownership mandatory',
+            'type': 'bill_vote',
+            'title': 'Bill to make gun ownership mandatory',
+            'description': '',
             'vote': 'Nay',
-            'with_party': false
+            'with_party': false,
+            'status': 'Failed'
           },
           {
             'date': new Date(2016, 0, 23),
-            'description': 'Joined committee to investigate Criss Angel',
+            'type': 'committee',
+            'title': 'Joined committee to investigate Criss Angel',
+            'description': 'Some committee description here hopefully',
             'vote': '',
-            'with_party': null
+            'with_party': null,
+            'status': ''
           },
           {
             'date': new Date(2016, 0, 20),
-            'description': 'Co-sponsored bill to fire all mailmen',
+            'type': 'bill_sponsor',
+            'title': 'Co-sponsored bill to fire all mailmen',
+            'description': 'Some description for the co-sponsored bill to fire all mailmen',
             'vote': '',
-            'with_party': null
+            'with_party': null,
+            'status': 'In review'
           },
           {
             'date': new Date(2016, 0, 15),
-            'description': 'Bill to banish Michael Bay',
+            'type': 'bill_vote',
+            'title': 'Bill to banish Michael Bay',
+            'description': '',
             'vote': 'Aye',
-            'with_party': true
+            'with_party': true,
+            'status': 'Passed'
           },
           {
             'date': new Date(2016, 0, 9),
-            'description': 'Sponsored bill to make Simlish a required course in school',
+            'type': 'bill_sponsor',
+            'title': 'Sponsored bill to make Simlish a required course in school',
+            'description': 'Description explaining significance of Simlish to society',
             'vote': '',
-            'with_party': null
+            'with_party': null,
+            'status': 'Floor reading'
           },
           {
             'date': new Date(2016, 0, 6),
-            'description': 'Bill to nationalize all pizza production',
+            'type': 'bill_vote',
+            'title': 'Bill to nationalize all pizza production',
+            'description': '',
             'vote': 'Nay',
-            'with_party': false
+            'with_party': false,
+            'status': 'Died on floor'
           },
           {
             'date': new Date(2016, 0, 1),
-            'description': 'Sponsored bill to research flux capacitors',
+            'type': 'bill_sponsor',
+            'title': 'Sponsored bill to research flux capacitors',
+            'description': 'Explanation of rationale for flux capacitor research',
             'vote': '',
-            'with_party': null
+            'with_party': null,
+            'status': 'Passed'
           },
           {
             'date': new Date(2015, 11, 25),
-            'description': 'Bill to find Santa Claus',
+            'type': 'bill_vote',
+            'title': 'Bill to find Santa Claus',
+            'description': '',
             'vote': 'Aye',
-            'with_party': true
+            'with_party': true,
+            'status': 'Failed'
           },
         ]
       }
