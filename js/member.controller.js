@@ -23,10 +23,10 @@ angular.module('team535.controllers')
     $scope.searchBills = true;
     $scope.searchCommittees = true;
     $scope.search = function() {
-      var searchTerms = $scope.searchText.split(' ');
-      
-      if (searchTerms.length == 0) 
+      if ($scope.searchText == '')
         return;
+      
+      var searchTerms = $scope.searchText.split(' ');
       
       $scope.searchResults = MemberService.search({
         member_id: $scope.member.id,
