@@ -79,5 +79,30 @@ img {
 }
 
 .member-search-result {
-  margin: 10px 5px !important;
+  margin: 15px 5px !important;
+}
+
+.md-list-item-text h3 {
+  white-space: normal !important;
+}
+
+
+.timeline-filters {
+  position: fixed;
+}
+#timeline-results-filler {
+  min-width: 180px;
+}
+
+.timeline-list-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.timeline-list-item-date {
+  margin: 16px 20px !important;
+  min-width: 85px;
+  text-align: right;
+}
+.timeline-list-item-text {
+  margin: 5px 0 !important;
 }
