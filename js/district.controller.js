@@ -30,7 +30,7 @@ angular.module('team535.controllers')
     $scope.state = '';
     $scope.zip = '';
     $scope.search = function() {
-      console.log($scope.streetAddress, $scope.city, $scope.state, $scope.zip);
+      //console.log($scope.streetAddress, $scope.city, $scope.state, $scope.zip);
       if ($scope.streetAddress == '' && $scope.city == '' 
           && $scope.state == '' && $scope.zip == '')
         return;

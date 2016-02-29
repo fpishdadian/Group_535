@@ -10,8 +10,8 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <form ng-submit="$event.preventDefault()">
-          <div layout="row" flex layout-wrap>
+        <div layout="row" flex layout-wrap>
+          <form ng-submit="search()" layout="column">
             <md-autocomplete
               md-no-cache="true"
               md-search-text="streetAddress"
@@ -23,6 +23,8 @@
               layout="column"
               flex>
             </md-autocomplete>
+          </form>
+          <form ng-submit="search()" layout="column">
             <md-autocomplete
               md-no-cache="true"
               md-search-text="city"
@@ -34,6 +36,8 @@
               layout="column"
               flex>
             </md-autocomplete>
+          </form>
+          <form ng-submit="search()" layout="column">
             <md-autocomplete
               md-no-cache="true"
               md-search-text="state"
@@ -45,6 +49,8 @@
               layout="column"
               flex>
             </md-autocomplete>
+          </form>
+          <form ng-submit="search()" layout="column">
             <md-autocomplete
               md-no-cache="true"
               md-search-text="zip"
@@ -56,16 +62,16 @@
               layout="column"
               flex>
             </md-autocomplete>
-            <div layout="column" flex>
-              <md-button class="md-primary md-raised search-button" ng-click="search()" layout-fill>Search</md-button>
-            </div>
+          </form>
+          <div layout="column">
+            <md-button class="md-primary md-raised search-button" ng-click="search()" layout-fill>Search</md-button>
           </div>
-
-          <br/>
-        </form>
+          <br>
+          <br>
+        </div>
 
         <div layout="column" flex>
-          <md-card layout="column" flex ng-repeat="district in districts" ng-click="addDistrict(district.id)">
+          <md-card layout="column" flex class="md-button card-button district-card" ng-repeat="district in districts" ng-click="addDistrict(district.id)">
             <md-card-title>
               <md-card-title-text>
                 <span class="md-headline">{{ district.name }} Congressional District</span>
