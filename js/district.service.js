@@ -14,7 +14,9 @@ angular.module('team535.services')
           'last_name': 'Durbin',
           'party': 'Democrat',
           'office_start': 1997,
-          'img_url': 'img/members/dick_durbin.png'
+          'img_url': 'img/members/dick_durbin.png',
+			'logo_url': 'img/logo/dem1_logo.png'
+
         },
         {
           'id': 4976,
@@ -23,7 +25,9 @@ angular.module('team535.services')
           'last_name': 'Kirk',
           'party': 'Republican',
           'office_start': 2010,
-          'img_url': 'img/members/mark_kirk.png'
+          'img_url': 'img/members/mark_kirk.png',
+			'logo_url': 'img/logo/rep_logo.png'
+
         }],
         'representative': {
           'id': 2231,
@@ -31,7 +35,9 @@ angular.module('team535.services')
           'last_name': 'Schakowsky',
           'party': 'Democrat',
           'office_start': 1999,
-          'img_url': 'img/members/jan_schakowsky.png'
+          'img_url': 'img/members/jan_schakowsky.png',
+			'logo_url': 'img/logo/dem1_logo.png'
+
         }
       },
       { 
@@ -45,7 +51,9 @@ angular.module('team535.services')
           'last_name': 'Brown',
           'party': 'Democrat',
           'office_start': 2007,
-          'img_url': 'img/members/sherrod_brown.png'
+          'img_url': 'img/members/sherrod_brown.png',
+			'logo_url': 'img/logo/dem1_logo.png'
+
         },
         {
           'id': 5302,
@@ -54,7 +62,9 @@ angular.module('team535.services')
           'last_name': 'Portman',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/rob_portman.png'
+          'img_url': 'img/members/rob_portman.png',
+			'logo_url': 'img/logo/rep_logo.png'
+
         }],
         'representative': {
           'id': 3054,
@@ -62,7 +72,9 @@ angular.module('team535.services')
           'last_name': 'Wenstrup',
           'party': 'Republican',
           'office_start': 2013,
-          'img_url': 'img/members/brad_wenstrup.png'
+          'img_url': 'img/members/brad_wenstrup.png',
+			'logo_url': 'img/logo/rep_logo.png'
+
         }
       },
     ];
