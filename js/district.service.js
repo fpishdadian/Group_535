@@ -15,7 +15,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 1997,
           'img_url': 'img/members/dick_durbin.png',
-			'logo_url': 'img/logo/dem2_logo.png'
+			'logo_url': 'img/logo/dem2_logo.jpg'
 
         },
         {
@@ -36,7 +36,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 1999,
           'img_url': 'img/members/jan_schakowsky.png',
-			'logo_url': 'img/logo/dem2_logo.png'
+			'logo_url': 'img/logo/dem2_logo.jpg'
 
         }
       },
@@ -52,7 +52,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 2007,
           'img_url': 'img/members/sherrod_brown.png',
-			'logo_url': 'img/logo/dem2_logo.png'
+			'logo_url': 'img/logo/dem2_logo.jpg'
 
         },
         {
