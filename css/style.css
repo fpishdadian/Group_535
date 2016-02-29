@@ -68,7 +68,16 @@ img {
   margin: 15px 0 0 0;
 }
 
+.district-card-sub {
+  margin-top: -3px;
+}
 
+.member-avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  margin-top: 10px;
+}
 
 
 /* CONGRESS MEMBER PAGE */

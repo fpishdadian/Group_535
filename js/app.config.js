@@ -17,10 +17,28 @@ angular.module('team535', [
 
     $mdThemingProvider
       .theme('sidenav')
-      .primaryPalette('indigo')
-      .accentPalette('blue')
+      .primaryPalette('blue')
+      .accentPalette('green')
       .warnPalette('red')
       .backgroundPalette('blue-grey').dark();
+
+    $mdThemingProvider
+      .theme('card-Democrat')
+      .primaryPalette('blue')
+      .accentPalette('red')
+      .warnPalette('red')
+      .backgroundPalette('blue',{
+        'default': '50'
+      });
+
+    $mdThemingProvider
+      .theme('card-Republican')
+      .primaryPalette('red')
+      .accentPalette('blue')
+      .warnPalette('red')
+      .backgroundPalette('red', {
+        'default': '100'
+      });
   })
 
   .config(function($stateProvider, $urlRouterProvider) {

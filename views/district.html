@@ -12,13 +12,13 @@
 		    <md-card-title>
 		      <md-card-title-media>
 		        <div class="md-media-sm card-media">
-		        	<img ng-src="{{ rep.logo_url }}" alt="{{ rep.party[0]}}" style="width:60px;height:60px;">
+	     				<img ng-src="{{ rep.img_url }}" class="member-avatar" alt="{{ rep.first_name }} {{ rep.last_name }}">
 		        </div>
 		      </md-card-title-media>
 		      <md-card-title-text>
 		        <span class="md-headline">{{ rep.first_name }} {{ rep.last_name }} </span>
-		        <!--<span class="md-subhead">({{ rep.party[0] }})</span>-->
-		        <span class="md-subhead">since {{ rep.office_start }}</span>
+		        <span class="md-subhead district-card-sub">{{ rep.party }}</span>
+		        <span class="md-subhead district-card-sub">since {{ rep.office_start }}</span>
 		      </md-card-title-text>
 		    </md-card-title>
 		  </md-card>
@@ -27,17 +27,17 @@
 	  <div>
 			<h2 class="md-display-1 district-subheading">Senators</h2>
 		  <span ng-repeat="senator in district.senators">
-		  <md-card class="md-button card-button" ng-click="selectMember(senator.id)">
+		  <md-card class="md-button card-button" ng-click="selectMember(senator.id)" >
 		    <md-card-title>
 		      <md-card-title-media>
 		        <div class="md-media-sm card-media">
-		        	<img ng-src="{{ senator.logo_url }}" alt="{{ senator.party[0] }}" style="width:60px;height:60px;">
+		        	<img ng-src="{{ senator.img_url }}" class="member-avatar" alt="{{ senator.first_name }} {{ senator.last_name }}">
 		        </div>
 		      </md-card-title-media>
 		      <md-card-title-text>
 		        <span class="md-headline">{{ senator.first_name }} {{ senator.last_name }}</span>
-		        <!--<span class="md-subhead">({{ senator.party[0] }})</span>-->
-		        <span class="md-subhead">since {{ senator.office_start }}</span>
+		        <span class="md-subhead district-card-sub">{{ senator.party }}</span>
+		        <span class="md-subhead district-card-sub">since {{ senator.office_start }}</span>
 		      </md-card-title-text>
 		    </md-card-title>
 		  </md-card>
