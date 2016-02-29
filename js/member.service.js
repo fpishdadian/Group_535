@@ -4,7 +4,7 @@ angular.module('team535.services')
   .factory('MemberService', function() {
     var members = [
       {
-        'id': 1023,
+        'id': 300038,
         'position': 'Senator',
         'rank': 'senior',
         'first_name': 'Dick',
@@ -15,7 +15,7 @@ angular.module('team535.services')
         'img_url': 'img/members/dick_durbin.png'
       },
       {
-        'id': 4976,
+        'id': 400222,
         'position': 'Senator',
         'rank': 'junior',
         'first_name': 'Mark',
@@ -26,7 +26,7 @@ angular.module('team535.services')
         'img_url': 'img/members/mark_kirk.png'
       },
       {
-        'id': 2231,
+        'id': 400360,
         'position': 'Representative',
         'first_name': 'Jan',
         'last_name': 'Schakowsky',
@@ -37,7 +37,7 @@ angular.module('team535.services')
         'img_url': 'img/members/jan_schakowsky.png'
       },
       {
-        'id': 2993,
+        'id': 400050,
         'position': 'Senator',
         'rank': 'senior',
         'first_name': 'Sherrod',
@@ -48,7 +48,7 @@ angular.module('team535.services')
         'img_url': 'img/members/sherrod_brown.png'
       },
       {
-        'id': 5302,
+        'id': 400325,
         'position': 'Senator',
         'rank': 'junior',
         'first_name': 'Rob',
@@ -59,7 +59,7 @@ angular.module('team535.services')
         'img_url': 'img/members/rob_portman.png'
       },
       {
-        'id': 3054,
+        'id': 412564,
         'position': 'Representative',
         'first_name': 'Brad',
         'last_name': 'Wenstrup',

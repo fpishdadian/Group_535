@@ -8,7 +8,7 @@ angular.module('team535.services')
         'name': 'Illinois\'s 9th',
         'senators': [
         {
-          'id': 1023,
+          'id': 300038,
           'rank': 'senior',
           'first_name': 'Dick',
           'last_name': 'Durbin',
@@ -19,7 +19,7 @@ angular.module('team535.services')
 
         },
         {
-          'id': 4976,
+          'id': 400222,
           'rank': 'junior',
           'first_name': 'Mark',
           'last_name': 'Kirk',
@@ -30,7 +30,7 @@ angular.module('team535.services')
 
         }],
         'representative': {
-          'id': 2231,
+          'id': 400360,
           'first_name': 'Jan',
           'last_name': 'Schakowsky',
           'party': 'Democrat',
@@ -45,7 +45,7 @@ angular.module('team535.services')
         'name': 'Ohio\'s 2nd',
         'senators': [
         {
-          'id': 2993,
+          'id': 400050,
           'rank': 'senior',
           'first_name': 'Sherrod',
           'last_name': 'Brown',
@@ -56,7 +56,7 @@ angular.module('team535.services')
 
         },
         {
-          'id': 5302,
+          'id': 400325,
           'rank': 'junior',
           'first_name': 'Rob',
           'last_name': 'Portman',
@@ -67,7 +67,7 @@ angular.module('team535.services')
 
         }],
         'representative': {
-          'id': 3054,
+          'id': 412564,
           'first_name': 'Brad',
           'last_name': 'Wenstrup',
           'party': 'Republican',
