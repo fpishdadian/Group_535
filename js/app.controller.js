@@ -60,6 +60,8 @@ angular.module('team535.controllers', [])
 
 
     $scope.savedDistricts = DistrictService.querySavedDistricts();
+    $scope.district = DistrictService.currentDistrict;
+    $state.go('app.district', {id: $scope.district.id});
 
     $scope.$watch(
       function () { return DistrictService.currentDistrict; },
