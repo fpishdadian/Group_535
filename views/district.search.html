@@ -1,0 +1,101 @@
+<md-dialog aria-label="Search Districts" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Search Districts</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/close.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <form ng-submit="$event.preventDefault()">
+          <div layout="row" flex layout-wrap>
+            <md-autocomplete
+              md-no-cache="true"
+              md-search-text="streetAddress"
+              md-selected-item-change=""
+              md-items=""
+              md-item-text=""
+              md-min-length="0"
+              placeholder="Street address"
+              layout="column"
+              flex>
+            </md-autocomplete>
+            <md-autocomplete
+              md-no-cache="true"
+              md-search-text="city"
+              md-selected-item-change=""
+              md-items=""
+              md-item-text=""
+              md-min-length="0"
+              placeholder="City"
+              layout="column"
+              flex>
+            </md-autocomplete>
+            <md-autocomplete
+              md-no-cache="true"
+              md-search-text="state"
+              md-selected-item-change=""
+              md-items=""
+              md-item-text=""
+              md-min-length="0"
+              placeholder="State"
+              layout="column"
+              flex>
+            </md-autocomplete>
+            <md-autocomplete
+              md-no-cache="true"
+              md-search-text="zip"
+              md-selected-item-change=""
+              md-items=""
+              md-item-text=""
+              md-min-length="0"
+              placeholder="ZIP"
+              layout="column"
+              flex>
+            </md-autocomplete>
+            <div layout="column" flex>
+              <md-button class="md-primary md-raised search-button" ng-click="search()" layout-fill>Search</md-button>
+            </div>
+          </div>
+
+          <br/>
+        </form>
+
+        <div layout="column" flex>
+          <md-card layout="column" flex ng-repeat="district in districts" ng-click="addDistrict(district.id)">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{ district.name }} Congressional District</span>
+                <!--<span class="md-subhead">Large</span>-->
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-wrap>
+              <md-card-title-media layout="column" flex ng-init="rep = district.representative">
+                <md-list-item class="md-3-line">
+                  <img ng-src="{{ rep.img_url }}" class="md-avatar" alt="{{rep.first_name}} {{ rep.last_name }}">
+                  <div class="md-list-item-text" layout="column">
+                    <h4>Rep.</h4>
+                    <h3>{{ rep.first_name }} {{ rep.last_name }}</h3>
+                    <h4>({{ rep.party[0] }})</h4>
+                  </div>
+                </md-list-item>
+              </md-card-title-media>
+              <md-card-title-media layout="column" flex ng-repeat="senator in district.senators">
+                <md-list-item class="md-3-line">
+                  <img ng-src="{{ senator.img_url }}" class="md-avatar" alt="{{senator.first_name}} {{ senator.last_name }}">
+                  <div class="md-list-item-text" layout="column">
+                    <h4>Sen.</h4>
+                    <h3>{{ senator.first_name }} {{ senator.last_name }}</h3>
+                    <h4>({{ senator.party[0] }})</h4>
+                  </div>
+                </md-list-item>
+              </md-card-title-media>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-dialog-content>
+</md-dialog>

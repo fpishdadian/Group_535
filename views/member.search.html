@@ -12,12 +12,9 @@
             placeholder="Keywords..."
             layout="column"
             flex>
-          <md-item-template>
-            <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-          </md-item-template>
         </md-autocomplete>
         <div layout="column">
-          <md-button class="md-primary md-raised" id="member-search-button" ng-click="search()" layout-fill>Search</md-button>
+          <md-button class="md-primary md-raised search-button" ng-click="search()" layout-fill>Search</md-button>
         </div>
       </div>
       <br/>
