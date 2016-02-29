@@ -81,10 +81,17 @@ img {
   margin: 0;
 }
 
+.overview-info-stats {
+  padding: 0;
+  font-weight: bold;
+}
+
 .overview-bar-label {
   text-align: center;
 }
-
+.overview-bar-label .md-subhead {
+  font-weight: 500;
+}
 .overview-bar-label-dem {
   text-align: right;
   padding-right: 10px;

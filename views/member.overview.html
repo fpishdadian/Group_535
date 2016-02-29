@@ -1,17 +1,17 @@
 <div layout="column" layout-fill>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Votes on {{ overview.votes.overall }}% of bills
+      Votes on <span class="overview-info-stats">{{ overview.votes.overall }}%</span> of bills
     </p>
   </div>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Votes with party {{ overview.votes.with_party }}% of the time
+      Votes with party <span class="overview-info-stats">{{ overview.votes.with_party }}%</span> of the time
     </p>
   </div>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Sponsored/co-sponsored {{ overview.num_bills }} bills
+      Sponsored/co-sponsored <span class="overview-info-stats">{{ overview.num_bills }}</span> bills
     </p>
   </div>
 
