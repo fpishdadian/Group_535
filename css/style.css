@@ -86,6 +86,10 @@ img {
   font-weight: bold;
 }
 
+.overview-issues-headline {
+  margin-bottom: 10px;
+}
+
 .overview-bar-label {
   text-align: center;
 }
