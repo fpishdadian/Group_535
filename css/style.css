@@ -40,13 +40,14 @@ img {
 }
 
 .page-header-bar {
-  background-color: #1976D2;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: #e53935;
 }
 
 .district-heading {
   margin: 30px 0 10px 10px;
   font-weight: 300;
-  color: #fff;
 }
 
 .district-subheading {

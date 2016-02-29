@@ -11,14 +11,14 @@ angular.module('team535', [
     $mdThemingProvider
       .theme('default')
       .primaryPalette('blue')
-      .accentPalette('pink')
+      .accentPalette('red')
       .warnPalette('red')
       .backgroundPalette('grey');
 
     $mdThemingProvider
       .theme('sidenav')
-      .primaryPalette('blue-grey')
-      .accentPalette('pink')
+      .primaryPalette('indigo')
+      .accentPalette('blue')
       .warnPalette('red')
       .backgroundPalette('blue-grey').dark();
   })
