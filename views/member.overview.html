@@ -1,28 +1,47 @@
 <div layout="column" layout-fill>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Votes on {{ overview.votes.overall }}% of bills
+      Votes on <span class="overview-info-stats">{{ overview.votes.overall }}%</span> of bills
     </p>
   </div>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Votes with party {{ overview.votes.with_party }}% of the time
+      Votes with party <span class="overview-info-stats">{{ overview.votes.with_party }}%</span> of the time
     </p>
   </div>
   <div layout="row" layout-fill flex>
     <p class="md-subhead overview-info" layout-padding>
-      Sponsored/co-sponsored {{ overview.num_bills }} bills
+      Sponsored/co-sponsored <span class="overview-info-stats">{{ overview.num_bills }}</span> bills
     </p>
   </div>
 
   <div layout="column" layout-fill flex>
-    <h3 class="md-headline">Major Issues</h3>
-    <div layout="row" layout-fill flex>
-      <p class="md-subhead overview-info" layout-padding>
-        {{ overview.issues[0].name }}
-      </p>
-      <div layout="column" layout-fill flex>
-        <!-- some progress bar-like stuff -->
+    <h3 class="md-headline overview-issues-headline">Major Issues</h3>
+    <div layout="row" layout-fill flex ng-repeat="issue in overview.issues">
+      <div layout="column" layout-fill flex="25">
+        <p class="md-subhead overview-info" layout-padding>
+          {{ issue.name }}
+        </p>
+      </div>
+      <div layout="column" class="overview-bar-label overview-bar-label-dem" layout-fill flex>
+        <p class="md-subhead overview-info" layout-padding>
+          D
+        </p>
+      </div>
+      <div layout="column" class="overview-bar-container" layout-fill flex="50">
+        <div>
+          <div class="overview-bar-dem" style="width: {{ (issue.value + 1) * 50 }}%;">
+            
+          </div>
+          <div class="overview-bar-rep" style="width: {{ 100 - (issue.value + 1) * 50 }}%;">
+            
+          </div>
+        </div>
+      </div>
+      <div layout="column" class="overview-bar-label overview-bar-label-rep" layout-fill flex=>
+        <p class="md-subhead overview-info" layout-padding>
+          R
+        </p>
       </div>
     </div>
   </div>

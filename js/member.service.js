@@ -115,15 +115,15 @@ angular.module('team535.services')
         'issues': [
           {
             'name': 'Education',
-            'value': -0.8
+            'value': -0.5
           },
           {
             'name': 'Healthcare',
-            'value': -0.75
+            'value': 0.6
           },
           {
             'name': 'Immigration',
-            'value': -0.83
+            'value': -0.1
           }
         ]
       }
