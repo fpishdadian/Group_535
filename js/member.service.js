@@ -104,6 +104,31 @@ angular.module('team535.services')
       }
     ];
 
+    var overviewResults = [
+      {
+        'member_id': 400050,
+        'votes': {
+          'overall': 90,
+          'with_party': 86,
+        },
+        'num_bills': 21,
+        'issues': [
+          {
+            'name': 'Education',
+            'rating': -0.8
+          },
+          {
+            'name': 'Healthcare',
+            'rating': -0.75
+          },
+          {
+            'name': 'Immigration',
+            'rating': -0.83
+          }
+        ]
+      }
+    ];
+
     var searchResults = [
       {
         'member_id': 400050,
@@ -274,6 +299,18 @@ angular.module('team535.services')
       },
 
       currentMember: members[0],
+
+      overview: function(req) {
+        /*
+        var result = overviewResults.find(function(result) {
+          return result.member_id == req.member_id;
+        });
+        */
+
+        var result = overviewResults[0];
+
+        return result;
+      },
 
       search: function(req) {
         /*
