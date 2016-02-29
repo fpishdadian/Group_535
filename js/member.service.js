@@ -48,6 +48,39 @@ angular.module('team535.services')
         'img_url': 'img/members/sherrod_brown.png'
       },
       {
+        'id': 3195,
+        'position': 'Representative',
+        'first_name': 'Steve',
+        'last_name': 'Chabot',
+        'party': 'Republican',
+        'state': 'Ohio',
+        'district_name': 'Ohio\'s 1st',
+        'office_start': 2011,
+        'img_url': 'img/members/steve_chabot.png'
+      },
+      {
+        'id': 3200,
+        'position': 'Representative',
+        'first_name': 'Joyce',
+        'last_name': 'Beatty',
+        'party': 'Democrat',
+        'state': 'Ohio',
+        'district_name': 'Ohio\'s 3rd',
+        'office_start': 2013,
+        'img_url': 'img/members/joyce_beatty.png'
+      },
+      {
+        'id': 3578,
+        'position': 'Representative',
+        'first_name': 'Jim',
+        'last_name': 'Jordan',
+        'party': 'Republican',
+        'state': 'Ohio',
+        'district_name': 'Ohio\'s 4th',
+        'office_start': 2007,
+        'img_url': 'img/members/jim_jordan.png'
+      },
+      {
         'id': 5302,
         'position': 'Senator',
         'rank': 'junior',

@@ -46,7 +46,7 @@ angular.module('team535.controllers', [])
   })
 
   // controller for the sidenav
-  .controller('SideNavCtrl', function($scope, $state, $timeout, $mdSidenav, $log, DistrictService) {
+  .controller('SideNavCtrl', function($scope, $state, $timeout, $mdSidenav, $mdDialog, $mdMedia, $log, DistrictService) {
     $scope.close = function () {
       $mdSidenav('left').close()
         .then(function () {
@@ -58,7 +58,8 @@ angular.module('team535.controllers', [])
       $mdOpenMenu(ev);
     };
 
-    $scope.savedDistricts = DistrictService.query();
+
+    $scope.savedDistricts = DistrictService.querySavedDistricts();
 
     $scope.$watch(
       function () { return DistrictService.currentDistrict; },
@@ -67,11 +68,29 @@ angular.module('team535.controllers', [])
     );
 
     $scope.selectDistrict = function(id) {
-      $scope.district = DistrictService.get({id: id});
+      $scope.district = DistrictService.getSavedDistrict({id: id});
       $state.go('app.district', {id: id});
     };
 
     $scope.selectMember = function(id) {
       $state.go('app.member.detail', {id: id});
-    }
+    };
+
+    $scope.searchDistrict = function(ev) {
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
+      $mdDialog.show({
+        controller: 'DistrictSearchCtrl',
+        templateUrl: 'views/district.search.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: useFullScreen
+      }).then(function(district_id) {
+        DistrictService.saveDistrict(district_id);
+        $scope.savedDistricts = DistrictService.querySavedDistricts();
+        $state.go('app.district', {id: district_id});
+      }, function() {
+        console.log('Dialog cancelled');
+      });
+    };
   })
