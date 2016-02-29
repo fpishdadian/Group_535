@@ -106,7 +106,7 @@ angular.module('team535.services')
 
     var searchResults = [
       {
-        'member_id': 2993,
+        'member_id': 400050,
         'bill_votes': [
           {
             'id': 34,
@@ -165,7 +165,7 @@ angular.module('team535.services')
 
     var timelineResults = [
       {
-        'member_id': 2993,
+        'member_id': 400050,
         'events': [
           {
             'date': new Date(2016, 0, 28),
@@ -276,9 +276,13 @@ angular.module('team535.services')
       currentMember: members[0],
 
       search: function(req) {
+        /*
         var result = searchResults.find(function(result) {
           return result.member_id == req.member_id;
         });
+        */
+
+        var result = searchResults[0];
 
         if (!req.search_votes)
           result.delete('bill_votes');
@@ -291,9 +295,12 @@ angular.module('team535.services')
       },
 
       timeline: function(req) {
+        /*
         var result = timelineResults.find(function(result) {
           return result.member_id == req.member_id;
         });
+        */
+        var result = timelineResults[0];
 
         return result;
       }

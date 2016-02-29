@@ -14,7 +14,9 @@ angular.module('team535.services')
           'last_name': 'Brown',
           'party': 'Democrat',
           'office_start': 2007,
-          'img_url': 'img/members/sherrod_brown.png'
+          'img_url': 'img/members/sherrod_brown.png',
+          'logo_url': 'img/logo/dem2_logo.png'
+
         },
         {
           'id': 400325,
@@ -23,7 +25,8 @@ angular.module('team535.services')
           'last_name': 'Portman',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/rob_portman.png'
+          'img_url': 'img/members/rob_portman.png',
+          'logo_url': 'img/logo/rep2_logo.png'
         }],
         'representative': {
           'id': 400071,
@@ -31,7 +34,8 @@ angular.module('team535.services')
           'last_name': 'Chabot',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/steve_chabot.png'
+          'img_url': 'img/members/steve_chabot.png',
+          'logo_url': 'img/logo/rep2_logo.png'
         }
       },
       { 
@@ -45,7 +49,8 @@ angular.module('team535.services')
           'last_name': 'Brown',
           'party': 'Democrat',
           'office_start': 2007,
-          'img_url': 'img/members/sherrod_brown.png'
+          'img_url': 'img/members/sherrod_brown.png',
+          'logo_url': 'img/logo/dem2_logo.png'
         },
         {
           'id': 400325,
@@ -54,7 +59,8 @@ angular.module('team535.services')
           'last_name': 'Portman',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/rob_portman.png'
+          'img_url': 'img/members/rob_portman.png',
+          'logo_url': 'img/logo/rep2_logo.png'
         }],
         'representative': {
           'id': 412565,
@@ -62,7 +68,8 @@ angular.module('team535.services')
           'last_name': 'Beatty',
           'party': 'Democrat',
           'office_start': 2013,
-          'img_url': 'img/members/joyce_beatty.png'
+          'img_url': 'img/members/joyce_beatty.png',
+          'logo_url': 'img/logo/dem2_logo.png'
         }
       },
       { 
@@ -76,7 +83,8 @@ angular.module('team535.services')
           'last_name': 'Brown',
           'party': 'Democrat',
           'office_start': 2007,
-          'img_url': 'img/members/sherrod_brown.png'
+          'img_url': 'img/members/sherrod_brown.png',
+          'logo_url': 'img/logo/dem2_logo.png'
         },
         {
           'id': 400325,
@@ -85,7 +93,8 @@ angular.module('team535.services')
           'last_name': 'Portman',
           'party': 'Republican',
           'office_start': 2011,
-          'img_url': 'img/members/rob_portman.png'
+          'img_url': 'img/members/rob_portman.png',
+          'logo_url': 'img/logo/rep2_logo.png'
         }],
         'representative': {
           'id': 412226,
@@ -93,7 +102,8 @@ angular.module('team535.services')
           'last_name': 'Jordan',
           'party': 'Republican',
           'office_start': 2007,
-          'img_url': 'img/members/jim_jordan.png'
+          'img_url': 'img/members/jim_jordan.png',
+          'logo_url': 'img/logo/rep2_logo.png'
         }
       }
     ];
@@ -111,8 +121,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 1997,
           'img_url': 'img/members/dick_durbin.png',
-			'logo_url': 'img/logo/dem2_logo.jpg'
-
+          'logo_url': 'img/logo/dem2_logo.png'
         },
         {
           'id': 400222,
@@ -122,8 +131,7 @@ angular.module('team535.services')
           'party': 'Republican',
           'office_start': 2010,
           'img_url': 'img/members/mark_kirk.png',
-			'logo_url': 'img/logo/rep2_logo.png'
-
+          'logo_url': 'img/logo/rep2_logo.png'
         }],
         'representative': {
           'id': 400360,
@@ -132,8 +140,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 1999,
           'img_url': 'img/members/jan_schakowsky.png',
-			'logo_url': 'img/logo/dem2_logo.jpg'
-
+          'logo_url': 'img/logo/dem2_logo.png'
         }
       },
       { 
@@ -148,8 +155,7 @@ angular.module('team535.services')
           'party': 'Democrat',
           'office_start': 2007,
           'img_url': 'img/members/sherrod_brown.png',
-			'logo_url': 'img/logo/dem2_logo.jpg'
-
+          'logo_url': 'img/logo/dem2_logo.png'
         },
         {
           'id': 400325,
@@ -159,8 +165,7 @@ angular.module('team535.services')
           'party': 'Republican',
           'office_start': 2011,
           'img_url': 'img/members/rob_portman.png',
-			'logo_url': 'img/logo/rep2_logo.png'
-
+          'logo_url': 'img/logo/rep2_logo.png'
         }],
         'representative': {
           'id': 412564,
@@ -169,8 +174,7 @@ angular.module('team535.services')
           'party': 'Republican',
           'office_start': 2013,
           'img_url': 'img/members/brad_wenstrup.png',
-			'logo_url': 'img/logo/rep2_logo.png'
-
+          'logo_url': 'img/logo/rep2_logo.png'
         }
       },
     ];
