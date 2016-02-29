@@ -77,6 +77,11 @@ img {
   overflow: hidden;
 }
 
+.overview-info {
+  margin: 0;
+  
+}
+
 .search-button {
   margin: 0;
   width: 100%;

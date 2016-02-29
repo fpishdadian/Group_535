@@ -1,2 +1,29 @@
-Content for overview tab<br>
-{{ controllerName }} <br>
+<div layout="column" layout-fill>
+  <div layout="row" layout-fill flex>
+    <p class="md-subhead overview-info" layout-padding>
+      Votes on {{ overview.votes.overall }}% of bills
+    </p>
+  </div>
+  <div layout="row" layout-fill flex>
+    <p class="md-subhead overview-info" layout-padding>
+      Votes with party {{ overview.votes.with_party }}% of the time
+    </p>
+  </div>
+  <div layout="row" layout-fill flex>
+    <p class="md-subhead overview-info" layout-padding>
+      Sponsored/co-sponsored {{ overview.num_bills }} bills
+    </p>
+  </div>
+
+  <div layout="column" layout-fill flex>
+    <h3 class="md-headline">Major Issues</h3>
+    <div layout="row" layout-fill flex>
+      <p class="md-subhead overview-info" layout-padding>
+        {{ overview.issues[0].name }}
+      </p>
+      <div layout="column" layout-fill flex>
+        <!-- some progress bar-like stuff -->
+      </div>
+    </div>
+  </div>
+</div>

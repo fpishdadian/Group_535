@@ -12,6 +12,10 @@ angular.module('team535.controllers')
     $scope.controllerName = 'MemberOverviewCtrl';
 
     $scope.member = MemberService.currentMember;
+
+    $scope.overview = MemberService.overview({
+      member_id: $scope.member.id
+    });
   })
 
   .controller('MemberSearchCtrl', function($scope, MemberService) {
