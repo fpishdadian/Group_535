@@ -17,12 +17,31 @@
 
   <div layout="column" layout-fill flex>
     <h3 class="md-headline">Major Issues</h3>
-    <div layout="row" layout-fill flex>
-      <p class="md-subhead overview-info" layout-padding>
-        {{ overview.issues[0].name }}
-      </p>
-      <div layout="column" layout-fill flex>
-        <!-- some progress bar-like stuff -->
+    <div layout="row" layout-fill flex ng-repeat="issue in overview.issues">
+      <div layout="column" layout-fill flex="25">
+        <p class="md-subhead overview-info" layout-padding>
+          {{ issue.name }}
+        </p>
+      </div>
+      <div layout="column" class="overview-bar-label overview-bar-label-dem" layout-fill flex>
+        <p class="md-subhead overview-info" layout-padding>
+          D
+        </p>
+      </div>
+      <div layout="column" class="overview-bar-container" layout-fill flex="50">
+        <div>
+          <div class="overview-bar-dem" style="width: {{ (issue.value + 1) * 50 }}%;">
+            
+          </div>
+          <div class="overview-bar-rep" style="width: {{ 100 - (issue.value + 1) * 50 }}%;">
+            
+          </div>
+        </div>
+      </div>
+      <div layout="column" class="overview-bar-label overview-bar-label-rep" layout-fill flex=>
+        <p class="md-subhead overview-info" layout-padding>
+          R
+        </p>
       </div>
     </div>
   </div>

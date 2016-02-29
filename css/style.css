@@ -79,7 +79,40 @@ img {
 
 .overview-info {
   margin: 0;
-  
+}
+
+.overview-bar-label {
+  text-align: center;
+}
+
+.overview-bar-label-dem {
+  text-align: right;
+  padding-right: 10px;
+  color: #0d47a1;
+}
+.overview-bar-label-rep {
+  text-align: left;
+  padding-left: 10px;
+  color: #b71c1c;
+}
+
+
+.overview-bar-container {
+  position: relative;
+  top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.overview-bar-dem {
+  min-height: 20px;
+  background-color: #2196f3;
+  float: left;
+}
+.overview-bar-rep {
+  min-height: 20px;
+  background-color: #e53935;
+  float: left;
 }
 
 .search-button {
