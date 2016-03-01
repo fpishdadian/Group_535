@@ -43,6 +43,15 @@
           narrow your display.
         </p>
         -->
+        <md-list ng-show="showBackToDistrict">
+          <md-list-item class="md-2-line" ng-click="backToDistrict()">
+            <img ng-src="img/icons/arrow_back.svg" class="md-avatar sidenav-back-arrow" alt="back to district page" />
+            <div class="md-list-item-text" layout="column">
+              <h3>Back to district page</h3>
+            </div>
+          </md-list-item>
+        </md-list>
+
         <md-list>
           <md-subheader class="md-no-sticky">Representative</md-subheader>
           {{ rep = district.representative;'' }}

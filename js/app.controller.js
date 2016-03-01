@@ -69,13 +69,20 @@ angular.module('team535.controllers', [])
       true
     );
 
+    $scope.backToDistrict = function() {
+      $state.go('app.district', {id: $scope.district.id});
+      $scope.showBackToDistrict = false;
+    };
+
     $scope.selectDistrict = function(id) {
       $scope.district = DistrictService.getSavedDistrict({id: id});
       $state.go('app.district', {id: id});
+      $scope.showBackToDistrict = false;
     };
 
     $scope.selectMember = function(id) {
       $state.go('app.member.detail', {id: id});
+      $scope.showBackToDistrict = true;
     };
 
     $scope.searchDistrict = function(ev) {
@@ -91,6 +98,7 @@ angular.module('team535.controllers', [])
         DistrictService.saveDistrict(district_id);
         $scope.savedDistricts = DistrictService.querySavedDistricts();
         $state.go('app.district', {id: district_id});
+        $scope.showBackToDistrict = false;
       }, function() {
         console.log('Dialog cancelled');
       });
