@@ -153,6 +153,11 @@ img {
   white-space: normal !important;
 }
 
+.no-results {
+  font-size: 0.9em;
+  margin-left: 40px;
+  color: #333;
+}
 
 .timeline-filters {
   position: fixed;

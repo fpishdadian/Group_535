@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('team535.services')
-  .factory('MemberService', function() {
+  .factory('MemberService', function($http) {
     var members = [
       {
         'id': 300038,
@@ -129,7 +129,13 @@ angular.module('team535.services')
       }
     ];
 
-    var searchResults = [
+    var searchResults =  {
+      votes: [],
+      sponsorships: [],
+      committees: []
+    };
+
+    /*var searchResults = [
       {
         'member_id': 400050,
         'bill_votes': [
@@ -186,7 +192,7 @@ angular.module('team535.services')
           },
         ]
       }
-    ];
+    ];*/
 
     var timelineResults = [
       {
@@ -312,24 +318,96 @@ angular.module('team535.services')
         return result;
       },
 
-      search: function(req) {
-        /*
-        var result = searchResults.find(function(result) {
-          return result.member_id == req.member_id;
-        });
-        */
-
-        var result = searchResults[0];
-
-        if (!req.search_votes)
-          result.delete('bill_votes');
-        if (!req.search_bills)
-          result.delete('bills');
-        if (!req.search_committees)
-          result.delete('committees');
-
-        return result;
+      getVotes: function(memberID) {
+        // get all recent votes this person has participated in 
+        return $http.get('https://www.govtrack.us/api/v2/vote_voter?limit=500&person='+memberID+'&sort=-created');
       },
+
+      getBills: function(memberID, searchText) {
+        // get all bills including the searchText that this person is the sponsor of
+        return $http.get('https://www.govtrack.us/api/v2/bill?q='+searchText+'&sponsor='+memberID+'&sort=-introduced_date')
+      },
+
+      getCommittees: function(memberID) {
+        // get all recent committees this person is a member of
+        return $http.get('https://www.govtrack.us/api/v2/committee_member?person='+memberID);
+      },
+
+      clearSearchResults: function() {
+        searchResults = {
+          votes: [],
+          sponsorships: [],
+          committees: []
+        };
+      },
+
+      search: function(req) {
+        
+        // get all votes this person has participated in,
+        // then filter the results on whether those bills
+        // include the search term
+        this.getVotes(req.member_id).then(function (result) {
+          //use "result" json object
+          console.log("VOTES:");
+          searchResults.votes = [];
+
+          var votes = result.data.objects;
+          for (var i=0; i<votes.length; i++) {
+            var allMatch = true;
+            for (var j=0; j<req.search_terms.length; j++) {
+              var regex = new RegExp(req.search_terms[j], 'gi');
+              if(!votes[i].vote.question.match(regex)) {
+                allMatch = false;
+                break;
+              }
+            }
+
+            if (allMatch) {
+              searchResults.votes.push(votes[i]);
+            }
+          }
+          console.log(searchResults.votes);
+        });
+
+        // get all bills that include the search term that this person
+        // sponsored
+        this.getBills(req.member_id, req.search_text).then(function (result) {
+          //use "result" json object
+          console.log("BILL SPONSORSHIPS:");
+          console.log(result.data.objects);
+          searchResults.sponsorships = result.data.objects;
+        });
+
+        // get all committees this person is a member of,
+        // then filter the results on whether those committees
+        // include the search term
+        this.getCommittees(req.member_id, req.search_terms).then(function (result) {
+          console.log("COMMITTEE MEMBERSHIP:");
+          searchResults.committees = [];
+          console.log(result);
+
+          var committees = result.data.objects;
+          for (var i=0; i<committees.length; i++) {
+            var allMatch = true;
+            for (var j=0; j<req.search_terms.length; j++) {
+              var regex = new RegExp(req.search_terms[j], 'gi');
+              if(!committees[i].committee.name.match(regex)) {
+                allMatch = false;
+                break;
+              }
+            }
+
+            if (allMatch) {
+              searchResults.committees.push(committees[i].committee);
+            }
+          }
+          console.log(searchResults.votes);
+        });
+      },
+
+
+      searchResults:  searchResults,
+
 
       timeline: function(req) {
         /*
