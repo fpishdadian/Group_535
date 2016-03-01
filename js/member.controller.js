@@ -26,13 +26,15 @@ angular.module('team535.controllers')
     $scope.searchVotes = true;
     $scope.searchBills = true;
     $scope.searchCommittees = true;
+  	$scope.searchResults = MemberService.searchResults;
+
     $scope.search = function() {
       if ($scope.searchText == '')
         return;
 
-      var searchTerms = $scope.searchText.split(' ');
+      var searchTerms = $scope.searchText;
       
-      $scope.searchResults = MemberService.search({
+      MemberService.search({
         member_id: $scope.member.id,
         search_terms: searchTerms,
         search_votes: $scope.searchVotes,
