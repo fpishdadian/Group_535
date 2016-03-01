@@ -45,6 +45,9 @@
               <p>{{ bill.vote.link }}</p>
             </div>
           </md-list-item>
+          <div ng-if="searchResults.votes.length == 0">
+            <p class="no-results">No matching bill votes found</p>
+          </div>
         </md-list>
         <br>
       </div>
@@ -60,6 +63,9 @@
               <p>{{ bill.link }}</p>
             </div>
           </md-list-item>
+          <div ng-if="searchResults.sponsorships.length == 0">
+            <p class="no-results">No matching bill sponsorships found</p>
+          </div>
         </md-list>
         <br>
       </div>
@@ -74,6 +80,9 @@
               <p>{{ committee.description }}</p>
             </div>
           </md-list-item>
+          <div ng-if="searchResults.committees.length == 0">
+            <p class="no-results">No matching committees found</p>
+          </div>
         </md-list>
       </div>
 
