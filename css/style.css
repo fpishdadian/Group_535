@@ -39,6 +39,10 @@ img {
   width: 288px;
 }
 
+.sidenav-back-arrow {
+  width: 25px !important;
+}
+
 .page-header-bar {
   border-width: 0 0 2px 0;
   border-style: solid;
