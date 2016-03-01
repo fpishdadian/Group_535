@@ -6,6 +6,7 @@ angular.module('team535.controllers')
     $scope.id = $stateParams.id;
 
     $scope.member = MemberService.get({id: $stateParams.id});
+
   })
 
   .controller('MemberOverviewCtrl', function($scope, MemberService) {
@@ -23,6 +24,7 @@ angular.module('team535.controllers')
 
     $scope.member = MemberService.currentMember;
 
+    $scope.showSearchResults = false;
     $scope.searchVotes = true;
     $scope.searchBills = true;
     $scope.searchCommittees = true;
@@ -32,15 +34,18 @@ angular.module('team535.controllers')
       if ($scope.searchText == '')
         return;
 
-      var searchTerms = $scope.searchText;
+      var searchTerms = $scope.searchText.split(' ');
       
       MemberService.search({
         member_id: $scope.member.id,
+        search_text: $scope.searchText,
         search_terms: searchTerms,
         search_votes: $scope.searchVotes,
         search_bills: $scope.searchBills,
         search_committees: $scope.searchCommittees
       });
+
+      $scope.showSearchResults = true;
     };
   })
 

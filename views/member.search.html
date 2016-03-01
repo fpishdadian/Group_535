@@ -25,22 +25,24 @@
   </div>
 
   <div layout="row" flex>
-    <md-content layout="column" ng-if="searchResults">
+    <md-content layout="column" ng-if="showSearchResults">
       
       <div ng-if="searchVotes">
         <md-list>
           <md-subheader class="md-no-sticky">Votes</md-subheader>
-          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.bill_votes">
+          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.votes">
             <img ng-src="img/icons/bill.svg" class="md-avatar" alt="bill icon" />
             <div class="md-list-item-text">
-              <h3>{{ bill.title }}</h3>
+              <h3>{{ bill.vote.question.substr(bill.vote.question.indexOf(':') + 2) }}</h3>
               <h4>
-                {{ bill.vote }} 
+                {{ bill.option.value }} -  
+                <!--
                 (<span ng-if="bill.with_party">with</span><span ng-if="!bill.with_party">against</span>
                  party) - 
-                {{ bill.status }}
+                 -->
+                Status: {{ bill.vote.result }}
               </h4>
-              <p>{{ bill.description }}</p>
+              <p>{{ bill.vote.link }}</p>
             </div>
           </md-list-item>
         </md-list>
@@ -50,12 +52,12 @@
       <div ng-if="searchBills">
         <md-list>
           <md-subheader class="md-no-sticky">Sponsorships</md-subheader>
-          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.bills">
+          <md-list-item class="md-3-line md-long-text member-search-result" ng-repeat="bill in searchResults.sponsorships">
             <img ng-src="img/icons/bill.svg" class="md-avatar" alt="bill icon" />
             <div class="md-list-item-text">
-              <h3>{{ bill.title }}</h3>
-              <h4>{{ bill.sponsorship }} - {{ bill.status }}</h4>
-              <p>{{ bill.description }}</p>
+              <h3>{{ bill.title_without_number }}</h3>
+              <h4>Status: {{ bill.current_status_label }}</h4>
+              <p>{{ bill.link }}</p>
             </div>
           </md-list-item>
         </md-list>

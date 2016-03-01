@@ -129,7 +129,11 @@ angular.module('team535.services')
       }
     ];
 
-    var searchResults =  { };
+    var searchResults =  {
+      votes: [],
+      sponsorships: [],
+      committees: []
+    };
 
     /*var searchResults = [
       {
@@ -319,9 +323,9 @@ angular.module('team535.services')
         return $http.get('https://www.govtrack.us/api/v2/vote_voter?limit=500&person='+memberID+'&sort=-created');
       },
 
-      getBills: function(memberID, searchTerm) {
-        // get all bills including the searchTerm that this person is the sponsor of
-        return $http.get('https://www.govtrack.us/api/v2/bill?q='+searchTerm+'&sponsor='+memberID+'&sort=-introduced_date')
+      getBills: function(memberID, searchText) {
+        // get all bills including the searchText that this person is the sponsor of
+        return $http.get('https://www.govtrack.us/api/v2/bill?q='+searchText+'&sponsor='+memberID+'&sort=-introduced_date')
       },
 
       getCommittees: function(memberID) {
@@ -329,21 +333,46 @@ angular.module('team535.services')
         return $http.get('https://www.govtrack.us/api/v2/committee_member?person='+memberID);
       },
 
+      clearSearchResults: function() {
+        searchResults = {
+          votes: [],
+          sponsorships: [],
+          committees: []
+        };
+      },
 
       search: function(req) {
         
         // get all votes this person has participated in,
         // then filter the results on whether those bills
         // include the search term
-        this.getVotes(req.member_id, req.search_terms).then(function (result) {
+        this.getVotes(req.member_id).then(function (result) {
           //use "result" json object
           console.log("VOTES:");
-          console.log(result);
+          //console.log(result);
+          searchResults.votes = [];
+
+          var votes = result.data.objects;
+          for (var i=0; i<votes.length; i++) {
+            var allMatch = true;
+            for (var j=0; j<req.search_terms.length; j++) {
+              var regex = new RegExp(req.search_terms[j], 'gi');
+              if(!votes[i].vote.question.match(regex)) {
+                allMatch = false;
+                break;
+              }
+            }
+
+            if (allMatch) {
+              searchResults.votes.push(votes[i]);
+            }
+          }
+          console.log(searchResults.votes);
         });
 
         // get all bills that include the search term that this person
         // sponsored
-        this.getBills(req.member_id, req.search_terms).then(function (result) {
+        this.getBills(req.member_id, req.search_text).then(function (result) {
           //use "result" json object
           console.log("BILL SPONSORSHIPS:");
           console.log(result);
