@@ -1,0 +1,12 @@
+{
+  "name": "team535",
+  "version": "1.0.0",
+  "description": "An experimental user interface for searching Congress members created for EECS 330: Human Computer Interaction class at Northwestern University",
+  "dependencies": {
+    "harp": "^0.20.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fpishdadian/Group_535"
+  }
+}
