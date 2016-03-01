@@ -349,7 +349,6 @@ angular.module('team535.services')
         this.getVotes(req.member_id).then(function (result) {
           //use "result" json object
           console.log("VOTES:");
-          //console.log(result);
           searchResults.votes = [];
 
           var votes = result.data.objects;
@@ -375,7 +374,7 @@ angular.module('team535.services')
         this.getBills(req.member_id, req.search_text).then(function (result) {
           //use "result" json object
           console.log("BILL SPONSORSHIPS:");
-          console.log(result);
+          console.log(result.data.objects);
           searchResults.sponsorships = result.data.objects;
         });
 
@@ -384,7 +383,25 @@ angular.module('team535.services')
         // include the search term
         this.getCommittees(req.member_id, req.search_terms).then(function (result) {
           console.log("COMMITTEE MEMBERSHIP:");
+          searchResults.committees = [];
           console.log(result);
+
+          var committees = result.data.objects;
+          for (var i=0; i<committees.length; i++) {
+            var allMatch = true;
+            for (var j=0; j<req.search_terms.length; j++) {
+              var regex = new RegExp(req.search_terms[j], 'gi');
+              if(!committees[i].committee.name.match(regex)) {
+                allMatch = false;
+                break;
+              }
+            }
+
+            if (allMatch) {
+              searchResults.committees.push(committees[i].committee);
+            }
+          }
+          console.log(searchResults.votes);
         });
       },
 
