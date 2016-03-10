@@ -42,7 +42,7 @@
                  -->
                 Status: {{ bill.vote.result }}
               </h4>
-              <p>{{ bill.vote.link }}</p>
+              <p><a href="{{ bill.vote.link }}">{{ bill.vote.link }}</a></p>
             </div>
           </md-list-item>
           <div ng-if="searchResults.votes.length == 0">
@@ -60,7 +60,7 @@
             <div class="md-list-item-text">
               <h3>{{ bill.title_without_number }}</h3>
               <h4>Status: {{ bill.current_status_label }}</h4>
-              <p>{{ bill.link }}</p>
+              <p><a href="{{ bill.link }}">{{ bill.link }}</a></p>
             </div>
           </md-list-item>
           <div ng-if="searchResults.sponsorships.length == 0">
